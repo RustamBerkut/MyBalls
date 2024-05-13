@@ -19,7 +19,16 @@ public class Ball : MonoBehaviour
         _healthSystem.SetMaxHealth(_maxHealth);
     }
 
-    public void OnBallTakeDamage(int damage)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<BulletDamage>()) 
+        {
+            int _damage = other.gameObject.GetComponent<BulletDamage>().damage;
+            OnBallTakeDamage(_damage);
+        }
+    }
+
+    private void OnBallTakeDamage(int damage)
     {
         _currentHealth -= damage;
         _healthSystem.SetHealth(_currentHealth);
@@ -27,6 +36,11 @@ public class Ball : MonoBehaviour
         if (_currentHealth <= 0)
         {
             BallWasDeadAction?.Invoke();
+            BallDeath();
         }
+    }
+    private void BallDeath()
+    {
+        Destroy(gameObject);
     }
 }

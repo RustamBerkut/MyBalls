@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5794824347773980284}
   - component: {fileID: 1495077678492487495}
   - component: {fileID: 4531908529442797780}
+  - component: {fileID: 1440141172881193047}
   m_Layer: 0
   m_Name: MainBallPrefab
   m_TagString: Ball
@@ -157,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballData: {fileID: 11400000, guid: 88d421b1e41a5c942b6ae03604203d41, type: 2}
+  _playerInput: {fileID: 1440141172881193047}
 --- !u!54 &1418285121943406771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -325,6 +327,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballData: {fileID: 11400000, guid: 88d421b1e41a5c942b6ae03604203d41, type: 2}
   _healthSystem: {fileID: 1495077678492487495}
+--- !u!114 &1440141172881193047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253944046526617157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 98b59c1fb65c35d4eb22f4be2825c0eb, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3778377317478274844}
+        m_TargetAssemblyTypeName: BallController, Assembly-CSharp
+        m_MethodName: StartDragBall
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 272afd0f-b2ae-43f9-84be-68a7dfc0bc9a
+    m_ActionName: BallControls/Touch[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: BallControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &7636896794035134537
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.35168228, g: 0.990566, b: 0.19157171, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

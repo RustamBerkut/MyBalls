@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BallController : MonoBehaviour
 {
     public BallData _ballData;
-    
+    public PlayerInput _playerInput;
+
     private float _timeDilation;
     private float _ballSpeed;
     private LineRenderer _lineRenderer;
@@ -23,6 +25,7 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             _beginDragPosition = Input.mousePosition;
