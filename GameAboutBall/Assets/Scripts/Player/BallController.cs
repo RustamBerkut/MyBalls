@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    [SerializeField] private float _ballSpeed;
-
+    public BallData _ballData;
+    
+    private float _timeDilation;
+    private float _ballSpeed;
     private LineRenderer _lineRenderer;
     private Vector3 _beginDragPosition;
     private Vector3 _force;
@@ -13,23 +15,24 @@ public class BallController : MonoBehaviour
 
     private void Start()
     {
+        _ballSpeed = _ballData.BallSpeed;
+        _timeDilation = _ballData.TimeDilation;
         _lineRenderer = GetComponent<LineRenderer>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             _beginDragPosition = Input.mousePosition;
-            Time.timeScale = 0.3f;
+            Time.timeScale = _timeDilation;
         }
         if (Input.GetMouseButton(0))
         {
             _force = new(Input.mousePosition.x - _beginDragPosition.x,
                 Input.mousePosition.y - _beginDragPosition.y, 0);
-            float _distance = Vector3.Distance(_beginDragPosition, Input.mousePosition);
-
+            
             Vector3[] point = new Vector3[5];
             _lineRenderer.positionCount = point.Length;
             for (int i = 0; i < point.Length; i++)
@@ -47,6 +50,10 @@ public class BallController : MonoBehaviour
             _lineRenderer.positionCount = 0;
             Time.timeScale = 1;
         }
+    }
+    private void OnEnable()
+    {
+        Time.timeScale = 1;
     }
     private void OnDisable()
     {
