@@ -1,18 +1,30 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SetupBallInEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject _ball;
+
+    private void OnEnable()
     {
-        
+        BallSpawner.SetupLevelDataAction += SetupPlayerInCamera;
+    }
+    private void OnDisable()
+    {
+        BallSpawner.SetupLevelDataAction -= SetupPlayerInCamera;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetupPlayerInCamera()
     {
-        
+        _ball = GameObject.FindGameObjectWithTag("Ball");
+    }
+    private void Update()
+    {
+        if (_ball != null) 
+        {   
+            transform.LookAt(_ball.transform.position);
+        }  
     }
 }
