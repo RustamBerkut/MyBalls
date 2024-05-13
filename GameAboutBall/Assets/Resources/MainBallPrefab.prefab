@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1644203416005061973}
   - component: {fileID: 7932584539814124055}
   - component: {fileID: 2575677088023394317}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -121,7 +121,8 @@ GameObject:
   - component: {fileID: 1495077678492487495}
   - component: {fileID: 4531908529442797780}
   - component: {fileID: 1440141172881193047}
-  m_Layer: 0
+  - component: {fileID: 6261241769641435154}
+  m_Layer: 3
   m_Name: MainBallPrefab
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -340,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 98b59c1fb65c35d4eb22f4be2825c0eb, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -353,19 +354,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3778377317478274844}
-        m_TargetAssemblyTypeName: BallController, Assembly-CSharp
-        m_MethodName: StartDragBall
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 272afd0f-b2ae-43f9-84be-68a7dfc0bc9a
     m_ActionName: BallControls/Touch[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -373,6 +362,27 @@ MonoBehaviour:
   m_DefaultActionMap: BallControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!135 &6261241769641435154
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253944046526617157}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7636896794035134537
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +395,7 @@ GameObject:
   - component: {fileID: 1771580299034544982}
   - component: {fileID: 4886439143498897666}
   - component: {fileID: 4874521796109330150}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +496,7 @@ GameObject:
   - component: {fileID: 2442896973210303881}
   - component: {fileID: 1944729593768271957}
   - component: {fileID: 1874042945037203741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +572,7 @@ GameObject:
   - component: {fileID: 2914373819278629719}
   - component: {fileID: 8274963201673154923}
   - component: {fileID: 9053291308608058528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SliderHealthImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

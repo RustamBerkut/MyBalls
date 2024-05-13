@@ -1,9 +1,6 @@
-using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SetupBallInEnemy : MonoBehaviour
+public class SetupBallInEnemyAndShooting : MonoBehaviour
 {
     public EnemyData _enemyData;
     public Transform _barrel;
@@ -39,19 +36,26 @@ public class SetupBallInEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if (_ball != null) 
+        if (_ball != null)
         {
             _currentTimer -= Time.deltaTime;
             transform.LookAt(_ball.transform.position);
+
             float _distanceBeetwen = Vector3.Distance(transform.position, _ball.transform.position);
             if (_attackDistance >= _distanceBeetwen && _currentTimer <= 0) 
             {
-                _currentTimer = _attackTime;
-                OnBallAttack();
+                Ray ray = new(transform.position, transform.forward);
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, _attackDistance))
+                {
+                    if (hitInfo.collider.GetComponent<Ball>())
+                    {
+                        _currentTimer = _attackTime;
+                        OnBallAttack();
+                    }    
+                }
             }
         }  
     }
-
     private void OnBallAttack()
     {
         GameObject _bullet = Instantiate(_attackBullet, _barrel.position, _barrel.rotation);

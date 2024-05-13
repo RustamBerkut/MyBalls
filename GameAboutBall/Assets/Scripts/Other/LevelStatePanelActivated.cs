@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class LevelStatePanelActivated : MonoBehaviour
 {
@@ -17,14 +16,14 @@ public class LevelStatePanelActivated : MonoBehaviour
             GameWin();
         });
     }
-    private void OnDisable()
-    {
-        _tween.Kill();
-    }
     private void GameWin()
     {
         _tween.Kill();
         _tween = _restartButton.image.DOFade(1, _timeOfDisappearance).SetEase(Ease.Linear);
         _tween = _restartButton.GetComponentInChildren<Text>().DOFade(1, _timeOfDisappearance).SetEase(Ease.Linear);
+    }
+    private void OnDisable()
+    {
+        _tween.Kill();
     }
 }
