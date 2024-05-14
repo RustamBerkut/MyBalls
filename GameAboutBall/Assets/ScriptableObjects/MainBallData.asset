@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MainBallData
   m_EditorClassIdentifier: 
   _ballHealth: 20
-  _ballSpeed: 4
+  _ballSpeed: 10
   _timeDilation: 0.3

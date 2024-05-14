@@ -36,12 +36,12 @@ public class BallController : MonoBehaviour
             _force = new(Input.mousePosition.x - _beginDragPosition.x,
                 Input.mousePosition.y - _beginDragPosition.y, 0);
             
-            Vector3[] point = new Vector3[5];
+            Vector3[] point = new Vector3[10];
             _lineRenderer.positionCount = point.Length;
             for (int i = 0; i < point.Length; i++)
             {
-                float _time = i * 0.01f;
-                point[i] = transform.position + _force * _time;
+                float _time = i * 0.1f;
+                point[i] = transform.position + _force * _time + _time * _time * Physics.gravity / (2f + i);
             }
             _lineRenderer.SetPositions(point);
 

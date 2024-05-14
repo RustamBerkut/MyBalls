@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5080223727500998848}
   - component: {fileID: 3659823402280149081}
+  - component: {fileID: 6423863088259791823}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -40,16 +41,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441958158324285732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f634b1049df7d3b4f8ca7432b92f3d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: c12cef085810fa045ae1bd18d239ea60, type: 2}
   _barrel: {fileID: 8647843467907433073}
-  _ballLayerMask:
-    serializedVersion: 2
-    m_Bits: 8
+--- !u!114 &6423863088259791823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441958158324285732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda3bae58be3c574b82d5dfbd49b441a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  States: 1
+  enemyData: {fileID: 11400000, guid: 59c6859995c849942b21f23663d6f66c, type: 2}
+  barrel: {fileID: 8647843467907433073}
 --- !u!1 &3091813241232245740
 GameObject:
   m_ObjectHideFlags: 0
